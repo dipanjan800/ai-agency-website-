@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus.ai - Premium AI Agency</title>
+    <meta name="description" content="Building AI-powered digital products for startups and enterprises.">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#000000',
+                        foreground: '#ffffff',
+                        accent: '#3b82f6',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-black text-white antialiased selection:bg-accent selection:text-white">
+
+    <!-- NAVBAR -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-6">
+        <div class="container mx-auto px-6 md:px-12 flex items-center justify-between">
+            <a href="#" class="text-xl font-bold tracking-tighter">
+                Nexus<span class="text-accent">.ai</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#services" class="text-sm text-gray-300 hover:text-white transition-colors">Services</a>
+                <a href="#work" class="text-sm text-gray-300 hover:text-white transition-colors">Work</a>
+                <a href="#pricing" class="text-sm text-gray-300 hover:text-white transition-colors">Pricing</a>
+                <button class="bg-accent text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-blue-600 transition-colors shadow-sm">
+                    Book Call
+                </button>
+            </nav>
+            <button id="mobile-menu-btn" class="md:hidden text-white">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 glass flex-col p-6 gap-4 md:hidden border-t border-white/10">
+            <a href="#services" class="text-lg text-gray-300 hover:text-white">Services</a>
+            <a href="#work" class="text-lg text-gray-300 hover:text-white">Work</a>
+            <a href="#pricing" class="text-lg text-gray-300 hover:text-white">Pricing</a>
+            <button class="w-full bg-accent text-white px-6 py-3 rounded-full font-medium hover:bg-blue-600 transition-colors mt-4">
+                Book Call
+            </button>
+        </div>
+    </header>
+
+    <main class="flex min-h-screen flex-col">
+        <!-- HERO -->
+        <section class="relative min-h-screen flex items-center pt-24 overflow-hidden">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-accent/20 rounded-full blur-[120px] -z-10 opacity-50"></div>
+            <div class="container mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-12 items-center">
+                <div class="flex flex-col items-start text-left z-10">
+                    <div class="fade-up inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-sm text-gray-300 mb-8">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-accent"></i>
+                        <span>The premier AI development agency</span>
+                    </div>
+                    <h1 class="fade-up delay-100 text-5xl md:text-7xl font-bold tracking-tighter leading-[1.1] mb-6">
+                        Build the <span class="text-gradient">AI future</span> of your business.
+                    </h1>
+                    <p class="fade-up delay-200 text-lg md:text-xl text-gray-400 mb-10 max-w-lg">
+                        We design, develop, and deploy bespoke AI solutions, chatbots, and scalable software for modern enterprises.
+                    </p>
+                    <div class="fade-up delay-300 flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                        <button class="flex items-center justify-center gap-2 bg-white text-black px-8 py-3 rounded-full font-medium hover:bg-gray-200 transition-colors w-full sm:w-auto group">
+                            Book a Free Consultation
+                            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                        <button class="px-8 py-3 rounded-full border border-white/20 hover:bg-white/10 transition-colors text-white font-medium w-full sm:w-auto">
+                            View Our Work
+                        </button>
+                    </div>
+                </div>
+                <div class="fade-up delay-400 relative w-full aspect-square lg:aspect-auto lg:h-[600px] glass rounded-3xl flex items-center justify-center overflow-hidden border border-white/10">
+                    <canvas id="canvas3d" style="width: 100%; height: 100%; display: block;"></canvas>
+                    <script type="module">
+                        import { Application } from 'https://esm.sh/@splinetool/runtime';
+                        const canvas = document.getElementById('canvas3d');
+                        const spline = new Application(canvas);
+                        spline.load('https://prod.spline.design/2335TSimlg0iOE4K/scene.splinecode');
+                    </script>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRUSTED BY -->
+        <section class="py-12 border-y border-white/5 bg-white/[0.02] overflow-hidden fade-up">
+            <div class="container mx-auto px-6 md:px-12 mb-6">
+                <p class="text-center text-sm text-gray-500 font-medium uppercase tracking-widest">Trusted by innovative companies worldwide</p>
+            </div>
+            <div class="relative w-full flex overflow-hidden">
+                <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10"></div>
+                <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10"></div>
+                <div class="flex whitespace-nowrap gap-16 md:gap-32 px-16 items-center min-w-max animate-ticker">
+                    <!-- Repeated items for ticker -->
+                    <div class="text-xl md:text-2xl font-bold text-gray-600">Acme Corp</div>
+                    <div class="text-xl md:text-2xl font-bold text-gray-600">GlobalNet</div>
+                    <div class="text-xl md:text-2xl font-bold text-gray-600">TechNova</div>
+                    <div class="text-xl md:text-2xl font-bold text-gray-600">Starlight</div>
+                    <div class="text-xl md:text-2xl font-bold text-gray-600">NexusSys</div>
+                    <div class="text-xl md:text-2xl font-bold text-gray-600">VortexAI</div>
+                    <!-- Duplicate -->
+                    <div class="text-xl md:text-2xl font-bold text-gray-600">Acme Corp</div>
+                    <div class="text-xl md:text-2xl font-bold text-gray-600">GlobalNet</div>
+                    <div class="text-xl md:text-2xl font-bold text-gray-600">TechNova</div>
+                    <div class="text-xl md:text-2xl font-bold text-gray-600">Starlight</div>
+                    <div class="text-xl md:text-2xl font-bold text-gray-600">NexusSys</div>
+                    <div class="text-xl md:text-2xl font-bold text-gray-600">VortexAI</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OLD SERVICES (For Comparison) -->
+        <section id="services-old" class="py-24 relative">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="flex flex-col gap-4 mb-16 items-center text-center fade-up">
+                    <span class="text-accent uppercase tracking-wider text-sm font-semibold">Our Services</span>
+                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Intelligent solutions for modern business</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Service Card -->
+                    <div class="fade-up group glass p-8 rounded-3xl hover:bg-white/10 transition-colors duration-300 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-colors"></div>
+                        <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-accent group-hover:scale-110 transition-transform">
+                            <i data-lucide="bot"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">AI Chatbots & Agents</h3>
+                        <p class="text-gray-400 mb-6 text-sm leading-relaxed">Custom conversational AI trained on your company data to automate customer support.</p>
+                        <div class="mt-auto pt-6 border-t border-white/10">
+                            <p class="text-xs font-medium text-gray-300 flex items-center gap-2"><i data-lucide="zap" class="w-3 h-3 text-accent"></i> Outcome: Reduce support tickets by up to 70%</p>
+                        </div>
+                    </div>
+                    <!-- Service Card -->
+                    <div class="fade-up delay-100 group glass p-8 rounded-3xl hover:bg-white/10 transition-colors duration-300 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-colors"></div>
+                        <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-accent group-hover:scale-110 transition-transform">
+                            <i data-lucide="code"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">AI Website Development</h3>
+                        <p class="text-gray-400 mb-6 text-sm leading-relaxed">High-performance, modern web applications seamlessly integrated with advanced AI capabilities.</p>
+                        <div class="mt-auto pt-6 border-t border-white/10">
+                            <p class="text-xs font-medium text-gray-300 flex items-center gap-2"><i data-lucide="zap" class="w-3 h-3 text-accent"></i> Outcome: Increase conversions</p>
+                        </div>
+                    </div>
+                    <!-- Service Card -->
+                    <div class="fade-up delay-200 group glass p-8 rounded-3xl hover:bg-white/10 transition-colors duration-300 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-colors"></div>
+                        <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-accent group-hover:scale-110 transition-transform">
+                            <i data-lucide="database"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Custom Business Software</h3>
+                        <p class="text-gray-400 mb-6 text-sm leading-relaxed">Tailor-made internal tools, CRM integrations, and admin dashboards built for scale.</p>
+                        <div class="mt-auto pt-6 border-t border-white/10">
+                            <p class="text-xs font-medium text-gray-300 flex items-center gap-2"><i data-lucide="zap" class="w-3 h-3 text-accent"></i> Outcome: Streamline operations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW SERVICES -->
+        <section id="services" class="py-24 relative">
+            <div class="container mx-auto px-6 md:px-12 max-w-6xl">
+                <div class="flex flex-col gap-4 mb-16 items-center text-center fade-up">
+                    <span class="text-accent uppercase tracking-wider text-sm font-semibold">Our Services</span>
+                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Innovating Tomorrow. <span class="text-violet-600">Building Today.</span></h2>
+                    <p class="text-gray-400 max-w-3xl text-sm md:text-base leading-relaxed">Empowering businesses with next-gen technology solutions from custom software to AI-driven platforms, we engineer your digital success.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Card 1 -->
+                    <div class="fade-up group p-8 rounded-[2rem] bg-[#111111] hover:bg-violet-600 border border-white/5 hover:border-violet-500 hover:shadow-[0_0_30px_rgba(124,58,237,0.3)] transition-all duration-300 relative flex flex-col h-full min-h-[280px]">
+                        <div class="flex justify-between items-start mb-auto">
+                            <div class="p-3 bg-violet-600/10 rounded-xl text-violet-600 border border-violet-600/20 group-hover:bg-white/20 group-hover:text-white group-hover:border-white/30 transition-colors">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/><polyline points="10 10 8 12 10 14"/><polyline points="14 10 16 12 14 14"/></svg>
+                            </div>
+                            <div class="w-8 h-8 rounded-full border border-violet-600/30 text-violet-600 flex items-center justify-center group-hover:bg-white group-hover:text-violet-600 transition-colors">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                            </div>
+                        </div>
+                        <div class="mt-12">
+                            <h3 class="text-xl font-bold mb-3 text-white">Custom Software<br>Development</h3>
+                            <p class="text-gray-400 group-hover:text-white/90 text-sm leading-relaxed transition-colors">Scalable, secure, and high-performance apps tailored to your needs.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="fade-up delay-100 group p-8 rounded-[2rem] bg-violet-600 hover:bg-violet-500 border border-violet-500 transition-all duration-300 relative flex flex-col h-full min-h-[280px] shadow-[0_0_30px_rgba(124,58,237,0.3)] hover:shadow-[0_0_40px_rgba(124,58,237,0.5)]">
+                        <div class="flex justify-between items-start mb-auto">
+                            <div class="p-3 bg-white/20 rounded-xl text-white border border-white/30">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/><polyline points="10 10 8 12 10 14"/><polyline points="14 10 16 12 14 14"/></svg>
+                            </div>
+                            <div class="w-8 h-8 rounded-full border border-white/50 text-white flex items-center justify-center bg-white/10 group-hover:bg-white group-hover:text-violet-600 transition-colors">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                            </div>
+                        </div>
+                        <div class="mt-12">
+                            <h3 class="text-xl font-bold mb-3 text-white">AI & Machine Learning</h3>
+                            <p class="text-white/90 text-sm leading-relaxed">Automate decisions, forecast trends, and power your product with data.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="fade-up delay-200 group p-8 rounded-[2rem] bg-[#111111] hover:bg-violet-600 border border-white/5 hover:border-violet-500 hover:shadow-[0_0_30px_rgba(124,58,237,0.3)] transition-all duration-300 relative flex flex-col h-full min-h-[280px]">
+                        <div class="flex justify-between items-start mb-auto">
+                            <div class="p-3 bg-violet-600/10 rounded-xl text-violet-600 border border-violet-600/20 group-hover:bg-white/20 group-hover:text-white group-hover:border-white/30 transition-colors">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/><polyline points="10 10 8 12 10 14"/><polyline points="14 10 16 12 14 14"/></svg>
+                            </div>
+                            <div class="w-8 h-8 rounded-full border border-violet-600/30 text-violet-600 flex items-center justify-center group-hover:bg-white group-hover:text-violet-600 transition-colors">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                            </div>
+                        </div>
+                        <div class="mt-12">
+                            <h3 class="text-xl font-bold mb-3 text-white">Cloud Solutions</h3>
+                            <p class="text-gray-400 group-hover:text-white/90 text-sm leading-relaxed transition-colors">Future-proof your infrastructure with AWS, Azure, or GCP deployments.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="fade-up group p-8 rounded-[2rem] bg-[#111111] hover:bg-violet-600 border border-white/5 hover:border-violet-500 hover:shadow-[0_0_30px_rgba(124,58,237,0.3)] transition-all duration-300 relative flex flex-col h-full min-h-[280px]">
+                        <div class="flex justify-between items-start mb-auto">
+                            <div class="p-3 bg-violet-600/10 rounded-xl text-violet-600 border border-violet-600/20 group-hover:bg-white/20 group-hover:text-white group-hover:border-white/30 transition-colors">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/><polyline points="10 10 8 12 10 14"/><polyline points="14 10 16 12 14 14"/></svg>
+                            </div>
+                            <div class="w-8 h-8 rounded-full border border-violet-600/30 text-violet-600 flex items-center justify-center group-hover:bg-white group-hover:text-violet-600 transition-colors">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                            </div>
+                        </div>
+                        <div class="mt-12">
+                            <h3 class="text-xl font-bold mb-3 text-white">UI/UX<br>Design</h3>
+                            <p class="text-gray-400 group-hover:text-white/90 text-sm leading-relaxed transition-colors">Seamless, human-centered digital experiences that drive engagement.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="fade-up delay-100 group p-8 rounded-[2rem] bg-[#111111] hover:bg-violet-600 border border-white/5 hover:border-violet-500 hover:shadow-[0_0_30px_rgba(124,58,237,0.3)] transition-all duration-300 relative flex flex-col h-full min-h-[280px]">
+                        <div class="flex justify-between items-start mb-auto">
+                            <div class="p-3 bg-violet-600/10 rounded-xl text-violet-600 border border-violet-600/20 group-hover:bg-white/20 group-hover:text-white group-hover:border-white/30 transition-colors">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/><polyline points="10 10 8 12 10 14"/><polyline points="14 10 16 12 14 14"/></svg>
+                            </div>
+                            <div class="w-8 h-8 rounded-full border border-violet-600/30 text-violet-600 flex items-center justify-center group-hover:bg-white group-hover:text-violet-600 transition-colors">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                            </div>
+                        </div>
+                        <div class="mt-12">
+                            <h3 class="text-xl font-bold mb-3 text-white">Web & Mobile App<br>Development</h3>
+                            <p class="text-gray-400 group-hover:text-white/90 text-sm leading-relaxed transition-colors">From MVPs to enterprise apps &mdash; we code what you imagine.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="fade-up delay-200 group p-8 rounded-[2rem] bg-[#111111] hover:bg-violet-600 border border-white/5 hover:border-violet-500 hover:shadow-[0_0_30px_rgba(124,58,237,0.3)] transition-all duration-300 relative flex flex-col h-full min-h-[280px]">
+                        <div class="flex justify-between items-start mb-auto">
+                            <div class="p-3 bg-violet-600/10 rounded-xl text-violet-600 border border-violet-600/20 group-hover:bg-white/20 group-hover:text-white group-hover:border-white/30 transition-colors">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/><polyline points="10 10 8 12 10 14"/><polyline points="14 10 16 12 14 14"/></svg>
+                            </div>
+                            <div class="w-8 h-8 rounded-full border border-violet-600/30 text-violet-600 flex items-center justify-center group-hover:bg-white group-hover:text-violet-600 transition-colors">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                            </div>
+                        </div>
+                        <div class="mt-12">
+                            <h3 class="text-xl font-bold mb-3 text-white">Cybersecurity</h3>
+                            <p class="text-gray-400 group-hover:text-white/90 text-sm leading-relaxed transition-colors">Protect what matters with advanced security frameworks and audits.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BENTO WHY CHOOSE ME -->
+        <section class="py-24 relative bg-[#05050A]">
+            <div class="container mx-auto px-6 md:px-12 max-w-6xl">
+                <div class="text-center mb-12">
+                    <p class="text-gray-400 text-sm tracking-wide">Why should you choose me specifically over other developers?</p>
+                </div>
+
+                <!-- Bento Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
+                    
+                    <!-- Clean Code (col-span-4) -->
+                    <div class="md:col-span-4 bg-[#0B0C10] rounded-[2rem] p-8 border border-white/5 relative overflow-hidden flex flex-col min-h-[340px] shadow-2xl">
+                        <!-- Glow -->
+                        <div class="absolute bottom-[-10%] left-1/2 -translate-x-1/2 w-[120%] h-[60%] bg-blue-600/30 blur-[80px] pointer-events-none"></div>
+                        
+                        <!-- Text -->
+                        <div class="relative z-10">
+                            <h3 class="text-2xl font-semibold text-white mb-2 tracking-tight">Clean Code</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">Structured, readable, and maintainable</p>
+                        </div>
+                        
+                        <!-- Illustration -->
+                        <div class="flex-1 flex items-center justify-center relative z-10 mt-6">
+                            <div class="w-32 h-32 rounded-3xl border border-white/5 flex items-center justify-center relative">
+                                <div class="absolute inset-[8px] rounded-[1.25rem] border border-white/5"></div>
+                                <div class="absolute inset-[16px] rounded-[1rem] border border-white/5"></div>
+                                <div class="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center shadow-[0_0_40px_rgba(37,99,235,0.6)] z-10">
+                                    <svg class="text-white w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- UX-Focused (col-span-4) -->
+                    <div class="md:col-span-4 bg-[#0B0C10] rounded-[2rem] p-8 border border-white/5 relative overflow-hidden flex flex-col min-h-[340px] shadow-2xl">
+                        <!-- Glow -->
+                        <div class="absolute bottom-[-10%] left-1/2 -translate-x-1/2 w-[120%] h-[60%] bg-blue-600/30 blur-[80px] pointer-events-none"></div>
+                        
+                        <!-- Text -->
+                        <div class="relative z-10">
+                            <h3 class="text-2xl font-semibold text-white mb-2 tracking-tight">UX-Focused</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">Seamless experience on all devices</p>
+                        </div>
+                        
+                        <!-- Illustration -->
+                        <div class="flex-1 flex items-center justify-center relative z-10 mt-8 w-full">
+                            <div class="relative w-full max-w-[200px] h-32">
+                                <!-- User avatar -->
+                                <div class="absolute top-0 left-0 flex flex-col items-center gap-1 z-20">
+                                    <div class="w-10 h-10 rounded-full bg-gray-800 border-[2px] border-[#0B0C10] overflow-hidden">
+                                        <img src="https://i.pravatar.cc/100?img=9" alt="User" class="w-full h-full object-cover" />
+                                    </div>
+                                    <span class="text-[9px] text-gray-400">User</span>
+                                </div>
+                                
+                                <!-- Curved dashed line -->
+                                <svg class="absolute top-4 left-6 w-24 h-16 text-blue-500/40" fill="none" stroke="currentColor" viewBox="0 0 100 100">
+                                    <path d="M 0 0 C 40 40, 50 60, 90 60" stroke-width="1.5" stroke-dasharray="4 4"/>
+                                </svg>
+
+                                <!-- Button 3D -->
+                                <div class="absolute top-6 right-0 bg-blue-600 px-6 py-2.5 rounded-xl shadow-[0_15px_30px_rgba(37,99,235,0.4),inset_0_3px_0_rgba(255,255,255,0.2),inset_0_-3px_0_rgba(0,0,0,0.2)] text-white text-sm font-medium transform rotate-[-10deg] z-10">
+                                    Button
+                                </div>
+
+                                <!-- Blue Cursor Arrow -->
+                                <div class="absolute top-10 right-4 rotate-[-20deg] z-20">
+                                    <svg class="w-8 h-8 text-blue-500 drop-shadow-[0_0_15px_rgba(59,130,246,0.8)]" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reliable Support (col-span-4) -->
+                    <div class="md:col-span-4 bg-[#0B0C10] rounded-[2rem] p-8 border border-white/5 relative overflow-hidden flex flex-col min-h-[340px] shadow-2xl">
+                        <!-- Glow -->
+                        <div class="absolute top-[-10%] right-[-10%] w-[120%] h-[60%] bg-blue-600/20 blur-[80px] pointer-events-none"></div>
+                        
+                        <!-- Illustration (Top) -->
+                        <div class="flex-1 relative z-10 w-full pt-4">
+                            <!-- Chat Bubble 1 -->
+                            <div class="flex items-start gap-3 mb-6">
+                                <img src="https://i.pravatar.cc/100?img=5" class="w-7 h-7 rounded-full border border-white/10" alt="Avatar">
+                                <div class="bg-white/10 backdrop-blur-sm text-[10px] text-white p-3 rounded-2xl rounded-tl-sm border border-white/5 leading-relaxed shadow-lg">
+                                    Hello! Can you help me, I have one problem with the code here...
+                                </div>
+                            </div>
+                            <!-- Chat Bubble 2 -->
+                            <div class="flex items-end gap-3 justify-end">
+                                <div class="bg-[#1E1F2E] text-[10px] text-gray-300 p-3 rounded-2xl rounded-tr-sm border border-white/5 leading-relaxed shadow-lg text-left">
+                                    No problem! Please show a screenshot of the problem...
+                                </div>
+                                <img src="https://i.pravatar.cc/100?img=11" class="w-7 h-7 rounded-full border border-white/10" alt="Avatar">
+                            </div>
+                        </div>
+
+                        <!-- Text (Bottom) -->
+                        <div class="relative z-10 mt-auto pt-8 text-right">
+                            <h3 class="text-2xl font-semibold text-white mb-2 tracking-tight">Reliable Support</h3>
+                            <p class="text-gray-400 text-sm">Long-term maintenance and stability</p>
+                        </div>
+                    </div>
+
+                    <!-- Fast Development (col-span-6) -->
+                    <div class="md:col-span-6 bg-[#0B0C10] rounded-[2rem] p-8 border border-white/5 relative overflow-hidden flex flex-col min-h-[340px] shadow-2xl">
+                        <!-- Glow -->
+                        <div class="absolute bottom-[-10%] left-[-10%] w-[80%] h-[80%] bg-blue-600/20 blur-[90px] pointer-events-none"></div>
+                        
+                        <!-- Text -->
+                        <div class="relative z-10 mb-8">
+                            <h3 class="text-2xl font-semibold text-white mb-2 tracking-tight">Fast Development</h3>
+                            <p class="text-gray-400 text-sm">Efficient workflows and quick delivery</p>
+                        </div>
+                        
+                        <!-- Illustration Grid -->
+                        <div class="flex-1 relative z-10">
+                            <div class="grid grid-cols-6 gap-2 opacity-80 w-full max-w-[400px]">
+                                <!-- Row 1 -->
+                                <div class="aspect-square bg-white/5 rounded-[10px] border border-white/5"></div>
+                                <div class="aspect-square bg-[#5046E5] rounded-[10px] flex items-center justify-center text-[11px] font-medium text-white shadow-[0_0_20px_rgba(79,70,229,0.5)] border border-indigo-400/50">Order</div>
+                                <div class="aspect-square bg-white/5 rounded-[10px] border border-white/5"></div>
+                                <div class="aspect-square bg-white/5 rounded-[10px] border border-white/5"></div>
+                                <div class="aspect-square bg-white/5 rounded-[10px] border border-white/5"></div>
+                                <div class="aspect-square bg-white/5 rounded-[10px] border border-white/5"></div>
+                                
+                                <!-- Row 2 -->
+                                <div class="aspect-square bg-white/5 rounded-[10px] border border-white/5"></div>
+                                <div class="aspect-square bg-white/5 rounded-[10px] border border-white/5"></div>
+                                <div class="aspect-square bg-white/5 rounded-[10px] border border-white/5"></div>
+                                <div class="aspect-square bg-[#3B82F6] rounded-[10px] flex items-center justify-center text-[11px] font-medium text-white shadow-[0_0_20px_rgba(59,130,246,0.5)] border border-blue-400/50">Solved</div>
+                                <div class="aspect-square bg-white/5 rounded-[10px] border border-white/5"></div>
+                                <div class="aspect-square bg-white/5 rounded-[10px] border border-white/5"></div>
+                                
+                                <!-- Row 3 -->
+                                <div class="aspect-square bg-white/5 rounded-[10px] border border-white/5"></div>
+                                <div class="aspect-square bg-white/5 rounded-[10px] border border-white/5"></div>
+                                <div class="aspect-square bg-white/5 rounded-[10px] border border-white/5"></div>
+                                <div class="aspect-square bg-white/5 rounded-[10px] border border-white/5"></div>
+                                <div class="aspect-square bg-white/5 rounded-[10px] border border-white/5"></div>
+                                <div class="aspect-square bg-white/5 rounded-[10px] border border-white/5"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modern Stack (col-span-6) -->
+                    <div class="md:col-span-6 flex flex-col gap-4 md:gap-6 min-h-[340px]">
+                        <!-- Stack top row (2 cards) -->
+                        <div class="grid grid-cols-2 gap-4 md:gap-6 flex-1">
+                            <!-- Python -->
+                            <div class="bg-[#0B0C10] rounded-[2rem] p-6 border border-white/5 relative overflow-hidden flex flex-col justify-center shadow-2xl">
+                                 <div class="w-12 h-12 mb-4 bg-white/10 rounded-xl flex items-center justify-center shadow-sm border border-white/5">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" class="w-7 h-7" alt="Python" />
+                                </div>
+                                <h4 class="text-white font-medium mb-1 tracking-tight">Python</h4>
+                                <p class="text-gray-400 text-[10px] leading-tight">Powerful and versatile programming language</p>
+                            </div>
+                            <!-- JavaScript -->
+                            <div class="bg-[#0B0C10] rounded-[2rem] p-6 border border-white/5 relative overflow-hidden flex flex-col justify-center shadow-2xl">
+                                <div class="w-12 h-12 mb-4 bg-white/10 rounded-xl flex items-center justify-center shadow-sm border border-white/5">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" class="w-7 h-7 rounded-sm" alt="JavaScript" />
+                                </div>
+                                <h4 class="text-white font-medium mb-1 tracking-tight">JavaScript</h4>
+                                <p class="text-gray-400 text-[10px] leading-tight">The language<br>of the web</p>
+                            </div>
+                        </div>
+
+                        <!-- Stack bottom row -->
+                        <div class="bg-[#0B0C10] rounded-[2rem] p-6 border border-white/5 relative overflow-hidden flex-1 flex flex-col md:flex-row items-end md:items-center justify-between shadow-2xl">
+                            <div class="absolute bottom-0 right-0 w-[80%] h-full bg-blue-600/20 blur-[80px] pointer-events-none"></div>
+                            
+                            <div class="flex gap-3 relative z-10 w-full md:w-auto mb-6 md:mb-0">
+                                <!-- Node.js -->
+                                <div class="bg-white/5 rounded-2xl p-4 py-5 border border-white/5 flex flex-col w-[120px]">
+                                    <div class="w-8 h-8 mb-3 flex items-center justify-center">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" class="w-8 h-8" alt="Node.js" />
+                                    </div>
+                                    <h4 class="text-white text-xs font-semibold mb-1">Node.js</h4>
+                                    <p class="text-gray-400 text-[9px] leading-tight">Fast and scalable backend solutions</p>
+                                </div>
+                                <!-- PHP -->
+                                <div class="bg-white/5 rounded-2xl p-4 py-5 border border-white/5 flex flex-col w-[120px]">
+                                    <div class="w-8 h-8 mb-3 flex items-center justify-center">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" class="w-8 h-8" alt="PHP" />
+                                    </div>
+                                    <h4 class="text-white text-xs font-semibold mb-1">PHP</h4>
+                                    <p class="text-gray-400 text-[9px] leading-tight">Powering dynamic web applications</p>
+                                </div>
+                            </div>
+
+                            <!-- Text Bottom Right -->
+                            <div class="text-left md:text-right relative z-10 w-full md:w-auto pl-0 md:pl-4">
+                                <h3 class="text-2xl font-semibold text-white mb-1 tracking-tight">Modern Stack</h3>
+                                <p class="text-gray-400 text-xs">Up-to-date tools for top performance</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="py-32 relative overflow-hidden bg-[#05050A]">
+            <!-- Blue Glow Backgrounds -->
+            <div class="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-600/20 blur-[120px] pointer-events-none rounded-full"></div>
+            <div class="absolute bottom-[-20%] left-[-10%] w-[500px] h-[500px] bg-blue-600/20 blur-[150px] pointer-events-none rounded-full"></div>
+            <div class="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-blue-600/20 blur-[150px] pointer-events-none rounded-full"></div>
+
+            <div class="container mx-auto px-6 md:px-12 max-w-6xl relative z-10">
+                <!-- Title -->
+                <div class="text-center mb-20 flex flex-col items-center justify-center">
+                    <h2 class="text-4xl md:text-5xl lg:text-[3.5rem] font-semibold text-white tracking-tight leading-tight">
+                        What Do People<br>
+                        <span class="inline-flex items-center gap-2 mt-2">
+                            Say 
+                            <div class="w-12 h-12 md:w-14 md:h-14 bg-white rounded-2xl flex items-center justify-center shadow-[0_0_40px_rgba(255,255,255,0.4)] mx-2">
+                                <svg class="w-6 h-6 md:w-7 md:h-7 text-[#3B47EA]" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
+                                    <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
+                                </svg>
+                            </div> 
+                            About Us?
+                        </span>
+                    </h2>
+                </div>
+
+                <!-- Testimonial Cards Grid -->
+                <div class="grid md:grid-cols-3 gap-6 items-stretch">
+                    
+                    <!-- Card 1 (Left) -->
+                    <div class="bg-gradient-to-br from-[#4056FF] to-[#1E2CAE] rounded-[2rem] p-8 md:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative overflow-hidden border border-white/10 md:mt-12 flex flex-col justify-between group hover:-translate-y-2 transition-transform duration-300">
+                        <div class="absolute top-0 right-0 w-48 h-48 bg-white/5 blur-3xl rounded-full pointer-events-none"></div>
+                        <p class="text-white/95 text-sm md:text-[15px] leading-relaxed mb-10 relative z-10 font-light">
+                            "Muslim was a pleasure to work with! The project was delivered ahead of schedule, and the quality exceeded our expectations. The website is clean, responsive, and intuitive. I highly recommend him to anyone looking for a professional and dedicated developer."
+                        </p>
+                        <div class="flex items-center gap-4 relative z-10 mt-auto">
+                            <img src="https://i.pravatar.cc/150?img=32" alt="Theresa Richards" class="w-12 h-12 rounded-full border-2 border-white/20 object-cover shadow-lg">
+                            <div>
+                                <h4 class="text-white font-semibold text-sm">Theresa Richards</h4>
+                                <p class="text-white/70 text-[11px] uppercase tracking-wider mt-0.5 font-medium">UI/UX Designer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 (Middle - Elevated) -->
+                    <div class="bg-gradient-to-br from-[#4056FF] to-[#1E2CAE] rounded-[2rem] p-8 md:p-10 shadow-[0_20px_60px_rgba(37,99,235,0.4)] relative overflow-hidden border border-white/10 md:-mt-12 z-10 flex flex-col justify-between group hover:-translate-y-2 transition-transform duration-300">
+                        <div class="absolute top-0 right-0 w-48 h-48 bg-white/10 blur-3xl rounded-full pointer-events-none"></div>
+                        <p class="text-white/95 text-sm md:text-[15px] leading-relaxed mb-10 relative z-10 font-light">
+                            "Muslim was a pleasure to work with! The project was delivered ahead of schedule, and the quality exceeded our expectations. The website is clean, responsive, and intuitive. I highly recommend him to anyone looking for a professional and dedicated developer."
+                        </p>
+                        <div class="flex items-center gap-4 relative z-10 mt-auto">
+                            <img src="https://i.pravatar.cc/150?img=11" alt="Esther Howard" class="w-12 h-12 rounded-full border-2 border-white/20 object-cover shadow-lg">
+                            <div>
+                                <h4 class="text-white font-semibold text-sm">Esther Howard</h4>
+                                <p class="text-white/70 text-[11px] uppercase tracking-wider mt-0.5 font-medium">SEO Manager</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 (Right) -->
+                    <div class="bg-gradient-to-br from-[#4056FF] to-[#1E2CAE] rounded-[2rem] p-8 md:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative overflow-hidden border border-white/10 md:mt-12 flex flex-col justify-between group hover:-translate-y-2 transition-transform duration-300">
+                        <div class="absolute top-0 right-0 w-48 h-48 bg-white/5 blur-3xl rounded-full pointer-events-none"></div>
+                        <p class="text-white/95 text-sm md:text-[15px] leading-relaxed mb-10 relative z-10 font-light">
+                            "Muslim was a pleasure to work with! The project was delivered ahead of schedule, and the quality exceeded our expectations. The website is clean, responsive, and intuitive. I highly recommend him to anyone looking for a professional and dedicated developer."
+                        </p>
+                        <div class="flex items-center gap-4 relative z-10 mt-auto">
+                            <img src="https://i.pravatar.cc/150?img=32" alt="Theresa Richards" class="w-12 h-12 rounded-full border-2 border-white/20 object-cover shadow-lg">
+                            <div>
+                                <h4 class="text-white font-semibold text-sm">Theresa Richards</h4>
+                                <p class="text-white/70 text-[11px] uppercase tracking-wider mt-0.5 font-medium">UI/UX Designer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING -->
+        <section class="py-32 relative overflow-hidden bg-black flex flex-col items-center justify-center min-h-screen">
+            <!-- Giant Background Text -->
+            <div class="absolute top-[10%] left-1/2 -translate-x-1/2 flex items-center justify-center pointer-events-none z-0">
+                <h2 class="text-[10rem] md:text-[18rem] lg:text-[24rem] font-bold text-[#1E3A8A]/40 tracking-tighter whitespace-nowrap drop-shadow-[0_0_80px_rgba(30,58,138,0.4)]">
+                    Pricing
+                </h2>
+            </div>
+            
+            <!-- Glowing Orbs -->
+            <div class="absolute top-[10%] right-[10%] w-[500px] h-[500px] bg-cyan-500/20 blur-[150px] rounded-full pointer-events-none z-0"></div>
+            <div class="absolute bottom-[-10%] left-[0%] w-[600px] h-[600px] bg-blue-600/30 blur-[180px] rounded-full pointer-events-none z-0"></div>
+
+            <div class="container mx-auto px-6 md:px-12 relative z-10 w-full max-w-7xl">
+                
+                <!-- Pricing Top Center Text -->
+                <div class="w-full flex justify-center mb-10 md:mb-16 relative z-20">
+                    <span class="text-4xl md:text-5xl font-bold text-cyan-200 tracking-[0.2em] uppercase drop-shadow-[0_0_25px_rgba(165,243,252,0.8)]">PRICING</span>
+                </div>
+
+                <!-- Pricing Grid -->
+                <div class="grid md:grid-cols-3 gap-6 lg:gap-8 items-stretch relative z-10">
+                    
+                    <!-- Free Card -->
+                    <div class="group bg-black/40 backdrop-blur-[40px] rounded-[2rem] border border-white/10 p-8 md:p-10 flex flex-col relative overflow-hidden transition-all duration-500 hover:bg-black/60 hover:-translate-y-2 hover:border-cyan-400/50 hover:shadow-[0_20px_60px_rgba(34,211,238,0.15)] shadow-2xl">
+                        <div class="mb-8">
+                            <h3 class="text-white text-2xl font-medium mb-1">Free</h3>
+                            <div class="text-white text-5xl font-semibold tracking-tight mb-4">Free</div>
+                            <p class="text-gray-400 text-xs md:text-sm leading-relaxed max-w-[250px]">For creators taking their first steps with Forma.</p>
+                        </div>
+                        
+                        <ul class="flex flex-col gap-5 flex-1 mb-12">
+                            <li class="flex items-start gap-4">
+                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
+                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">Up to 3 projects in the cloud</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
+                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">Image export up to 1080p</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
+                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">Basic editing tools</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
+                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">Free templates and icons</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
+                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">Access via web and mobile app</span>
+                            </li>
+                        </ul>
+                        
+                        <button class="w-full py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors text-sm shadow-[0_0_20px_rgba(255,255,255,0.2)] mt-auto">
+                            Choose Plan
+                        </button>
+                    </div>
+
+                    <!-- Standard Card -->
+                    <div class="group bg-black/40 backdrop-blur-[40px] rounded-[2rem] border border-white/10 p-8 md:p-10 flex flex-col relative overflow-hidden transition-all duration-500 hover:bg-black/60 hover:-translate-y-2 hover:border-cyan-400/50 hover:shadow-[0_20px_60px_rgba(34,211,238,0.15)] shadow-2xl">
+                        <div class="mb-8">
+                            <h3 class="text-white text-2xl font-medium mb-1">Standard</h3>
+                            <div class="flex items-baseline gap-1 mb-4">
+                                <span class="text-white text-5xl font-semibold tracking-tight transition-all duration-300" id="standard-price" data-monthly="$9,99" data-yearly="$99,99">$9,99</span>
+                                <span class="text-gray-400 text-2xl transition-all duration-300" id="standard-period">/m</span>
+                            </div>
+                            <p class="text-gray-400 text-xs md:text-sm leading-relaxed max-w-[250px]">For freelancers and small teams who need more freedom and flexibility.</p>
+                        </div>
+                        
+                        <ul class="flex flex-col gap-5 flex-1 mb-12">
+                            <li class="flex items-start gap-4">
+                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
+                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">Up to 50 projects in the cloud</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
+                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">Export up to 4K</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
+                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">Advanced editing toolkit</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
+                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">Team collaboration (up to 5 members)</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
+                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">Access to premium template library</span>
+                            </li>
+                        </ul>
+                        
+                        <button class="w-full py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors text-sm shadow-[0_0_20px_rgba(255,255,255,0.2)] mt-auto">
+                            Choose Plan
+                        </button>
+                    </div>
+
+                    <!-- Pro Card -->
+                    <div class="group bg-black/40 backdrop-blur-[40px] rounded-[2rem] border-[1.5px] border-cyan-400/80 p-8 md:p-10 flex flex-col relative overflow-hidden transition-all duration-500 shadow-[0_0_50px_rgba(34,211,238,0.2),inset_0_0_30px_rgba(34,211,238,0.15)] hover:-translate-y-2 hover:shadow-[0_20px_80px_rgba(34,211,238,0.4),inset_0_0_40px_rgba(34,211,238,0.2)] hover:border-cyan-300">
+                        <div class="absolute top-[-50px] right-[-50px] w-[200px] h-[200px] bg-cyan-400/20 blur-[60px] rounded-full pointer-events-none z-0"></div>
+                        <div class="absolute bottom-[-50px] left-[-50px] w-[150px] h-[150px] bg-blue-500/20 blur-[60px] rounded-full pointer-events-none z-0"></div>
+                        
+                        <div class="mb-8 relative z-10">
+                            <h3 class="text-white text-2xl font-medium mb-1">Pro</h3>
+                            <div class="flex items-baseline gap-1 mb-4">
+                                <span class="text-white text-5xl font-semibold tracking-tight transition-all duration-300" id="pro-price" data-monthly="$19,99" data-yearly="$199,99">$19,99</span>
+                                <span class="text-gray-400 text-2xl transition-all duration-300" id="pro-period">/m</span>
+                            </div>
+                            <p class="text-gray-400 text-xs md:text-sm leading-relaxed max-w-[250px]">For studios, agencies, and professional creators working with brands.</p>
+                        </div>
+                        
+                        <ul class="flex flex-col gap-5 flex-1 mb-12 relative z-10">
+                            <li class="flex items-start gap-4">
+                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
+                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">Unlimited projects</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
+                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">Export up to 8K + animations</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
+                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">AI-powered content generation tools</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
+                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">Unlimited team members</span>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
+                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">Brand customization (logos, fonts, color palettes)</span>
+                            </li>
+                        </ul>
+                        
+                        <button class="w-full py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors text-sm shadow-[0_0_20px_rgba(255,255,255,0.3)] mt-auto relative z-10">
+                            Choose Plan
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- Yearly Toggle -->
+                <div class="mt-12 flex items-center justify-start gap-4 relative z-10">
+                    <span id="monthly-label" class="text-white font-medium text-lg cursor-pointer transition-colors duration-300" onclick="if(isYearly) togglePricing()">Monthly</span>
+                    <button id="pricing-toggle" onclick="togglePricing()" class="w-14 h-7 bg-white rounded-full flex items-center px-1 transition-colors relative shadow-inner cursor-pointer hover:bg-gray-100">
+                        <div id="toggle-knob" class="w-5 h-5 bg-black rounded-full shadow-md transition-transform duration-300 translate-x-0"></div>
+                    </button>
+                    <span id="yearly-label" class="text-gray-500 font-medium text-lg cursor-pointer transition-colors duration-300" onclick="if(!isYearly) togglePricing()">Yearly <span class="text-xs ml-1 bg-cyan-400/20 text-cyan-400 px-2 py-0.5 rounded-full border border-cyan-400/30">Save 20%</span></span>
+                </div>
+
+                <!-- Pricing Script -->
+                <script>
+                    let isYearly = false;
+                    function togglePricing() {
+                        isYearly = !isYearly;
+                        const knob = document.getElementById('toggle-knob');
+                        const mLabel = document.getElementById('monthly-label');
+                        const yLabel = document.getElementById('yearly-label');
+                        const sPrice = document.getElementById('standard-price');
+                        const pPrice = document.getElementById('pro-price');
+                        const sPeriod = document.getElementById('standard-period');
+                        const pPeriod = document.getElementById('pro-period');
+
+                        if(isYearly) {
+                            knob.style.transform = 'translateX(28px)';
+                            mLabel.classList.replace('text-white', 'text-gray-500');
+                            yLabel.classList.replace('text-gray-500', 'text-white');
+                            
+                            // Animate price change
+                            sPrice.style.opacity = '0';
+                            pPrice.style.opacity = '0';
+                            
+                            setTimeout(() => {
+                                sPrice.innerText = sPrice.getAttribute('data-yearly');
+                                pPrice.innerText = pPrice.getAttribute('data-yearly');
+                                sPeriod.innerText = '/y';
+                                pPeriod.innerText = '/y';
+                                sPrice.style.opacity = '1';
+                                pPrice.style.opacity = '1';
+                            }, 150);
+                            
+                        } else {
+                            knob.style.transform = 'translateX(0)';
+                            mLabel.classList.replace('text-gray-500', 'text-white');
+                            yLabel.classList.replace('text-white', 'text-gray-500');
+                            
+                            // Animate price change
+                            sPrice.style.opacity = '0';
+                            pPrice.style.opacity = '0';
+                            
+                            setTimeout(() => {
+                                sPrice.innerText = sPrice.getAttribute('data-monthly');
+                                pPrice.innerText = pPrice.getAttribute('data-monthly');
+                                sPeriod.innerText = '/m';
+                                pPeriod.innerText = '/m';
+                                sPrice.style.opacity = '1';
+                                pPrice.style.opacity = '1';
+                            }, 150);
+                        }
+                    }
+                </script>
+
+            </div>
+        </section>
+
+        <!-- WHY US -->
+        <section class="py-24 relative overflow-hidden">
+            <div class="absolute top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[100px] -z-10"></div>
+            <div class="container mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <div class="fade-up flex flex-col gap-4 mb-8 items-start text-left">
+                        <span class="text-accent uppercase tracking-wider text-sm font-semibold">The Nexus Advantage</span>
+                        <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Why leading brands partner with us</h2>
+                    </div>
+                    <p class="fade-up text-gray-400 text-lg mb-8 max-w-md">Building AI products requires more than just calling APIs. It requires deep technical expertise, robust architecture, and a focus on user experience.</p>
+                    
+                    <div class="flex flex-col gap-6">
+                        <div class="fade-up flex gap-4">
+                            <i data-lucide="check-circle-2" class="text-accent shrink-0 mt-1 w-5 h-5"></i>
+                            <div>
+                                <h4 class="text-white font-semibold mb-1">Elite Engineering</h4>
+                                <p class="text-sm text-gray-400">Our team consists of top-tier developers and AI researchers.</p>
+                            </div>
+                        </div>
+                        <div class="fade-up delay-100 flex gap-4">
+                            <i data-lucide="check-circle-2" class="text-accent shrink-0 mt-1 w-5 h-5"></i>
+                            <div>
+                                <h4 class="text-white font-semibold mb-1">Bespoke Solutions</h4>
+                                <p class="text-sm text-gray-400">Every architecture is tailored to your specific business requirements.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-up delay-200 relative">
+                    <div class="aspect-[4/5] w-full max-w-md mx-auto glass rounded-3xl p-2">
+                        <div class="w-full h-full rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-between p-8 overflow-hidden relative">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-accent/20 blur-2xl"></div>
+                            <div class="absolute bottom-0 left-0 w-32 h-32 bg-purple-500/20 blur-2xl"></div>
+                            <div class="space-y-4 z-10">
+                                <div class="h-2 w-12 bg-white/20 rounded-full"></div>
+                                <div class="h-8 w-3/4 bg-white/10 rounded-lg"></div>
+                                <div class="h-4 w-1/2 bg-white/5 rounded-lg"></div>
+                            </div>
+                            <div class="mt-auto space-y-4 z-10">
+                                <div class="glass p-4 rounded-xl flex items-center gap-4">
+                                    <div class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold">99%</div>
+                                    <div>
+                                        <div class="text-sm font-medium">Uptime Guarantee</div>
+                                        <div class="text-xs text-gray-400">Enterprise SLA</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING -->
+        <section id="pricing" class="py-24 relative">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] -z-10"></div>
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="fade-up flex flex-col gap-4 mb-16 items-center text-center">
+                    <span class="text-accent uppercase tracking-wider text-sm font-semibold">Investment</span>
+                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Transparent pricing for premium work</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Starter -->
+                    <div class="fade-up p-8 rounded-3xl glass flex flex-col">
+                        <h3 class="text-xl font-bold mb-2">Starter Pilot</h3>
+                        <p class="text-gray-400 text-sm mb-6 h-10">Perfect for validating an AI concept or landing page.</p>
+                        <div class="text-4xl font-bold mb-8">$5,000</div>
+                        <ul class="flex flex-col gap-4 mb-8 flex-grow">
+                            <li class="flex items-start gap-3 text-sm text-gray-300"><i data-lucide="check" class="text-accent shrink-0 mt-0.5 w-4 h-4"></i>Custom AI Chatbot</li>
+                            <li class="flex items-start gap-3 text-sm text-gray-300"><i data-lucide="check" class="text-accent shrink-0 mt-0.5 w-4 h-4"></i>Next.js & Tailwind Stack</li>
+                            <li class="flex items-start gap-3 text-sm text-gray-300"><i data-lucide="check" class="text-accent shrink-0 mt-0.5 w-4 h-4"></i>2 Weeks Delivery</li>
+                        </ul>
+                        <button class="w-full px-8 py-3 rounded-full border border-white/20 hover:bg-white/10 transition-colors text-white font-medium mt-auto">Get Started</button>
+                    </div>
+                    <!-- Pro -->
+                    <div class="fade-up delay-100 p-8 rounded-3xl bg-white/10 border-2 border-accent shadow-[0_0_50px_rgba(59,130,246,0.15)] flex flex-col relative">
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-1 bg-accent text-white text-xs font-bold uppercase tracking-wider rounded-full">Most Popular</div>
+                        <h3 class="text-xl font-bold mb-2">Growth Engine</h3>
+                        <p class="text-gray-400 text-sm mb-6 h-10">Comprehensive AI applications and workflows.</p>
+                        <div class="text-4xl font-bold mb-8">$15,000+</div>
+                        <ul class="flex flex-col gap-4 mb-8 flex-grow">
+                            <li class="flex items-start gap-3 text-sm text-gray-300"><i data-lucide="check" class="text-accent shrink-0 mt-0.5 w-4 h-4"></i>Custom SaaS Application</li>
+                            <li class="flex items-start gap-3 text-sm text-gray-300"><i data-lucide="check" class="text-accent shrink-0 mt-0.5 w-4 h-4"></i>Advanced RAG Pipeline</li>
+                            <li class="flex items-start gap-3 text-sm text-gray-300"><i data-lucide="check" class="text-accent shrink-0 mt-0.5 w-4 h-4"></i>Priority SLA Support</li>
+                        </ul>
+                        <button class="w-full bg-accent text-white px-8 py-3 rounded-full hover:bg-blue-600 transition-colors font-medium mt-auto">Get Started</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="py-24">
+            <div class="container mx-auto px-6 md:px-12 max-w-3xl">
+                <div class="fade-up flex flex-col gap-4 mb-16 items-center text-center">
+                    <span class="text-accent uppercase tracking-wider text-sm font-semibold">Clarity</span>
+                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Frequently asked questions</h2>
+                </div>
+                
+                <div class="flex flex-col gap-4 fade-up delay-100">
+                    <div class="glass rounded-2xl overflow-hidden border border-white/10">
+                        <button class="faq-button w-full flex items-center justify-between p-6 text-left focus:outline-none">
+                            <span class="font-semibold text-lg">Do you only work with AI projects?</span>
+                            <i data-lucide="chevron-down" class="faq-icon text-gray-400"></i>
+                        </button>
+                        <div class="faq-content">
+                            <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
+                                While our expertise lies in AI integration and development, we build full-stack web applications, SaaS products, and internal tools. Robust software engineering is the foundation of everything we do.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass rounded-2xl overflow-hidden border border-white/10">
+                        <button class="faq-button w-full flex items-center justify-between p-6 text-left focus:outline-none">
+                            <span class="font-semibold text-lg">How long does a typical project take?</span>
+                            <i data-lucide="chevron-down" class="faq-icon text-gray-400"></i>
+                        </button>
+                        <div class="faq-content">
+                            <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">
+                                A standard AI landing page can take 2-3 weeks. More complex SaaS platforms or custom enterprise integrations typically take 6-12 weeks depending on the scope.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="py-24 md:py-32 relative overflow-hidden fade-up">
+            <div class="absolute inset-0 bg-accent/5"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-[400px] bg-accent/20 blur-[120px] rounded-full -z-10"></div>
+            
+            <div class="container mx-auto px-6 md:px-12 relative z-10">
+                <div class="glass border border-white/20 rounded-[2.5rem] p-10 md:p-20 text-center max-w-5xl mx-auto overflow-hidden relative">
+                    <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:2rem_2rem] -z-10"></div>
+                    <h2 class="text-4xl md:text-6xl font-bold tracking-tight mb-6">Ready to build the future?</h2>
+                    <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">Stop falling behind. Let's discuss how custom AI solutions can accelerate your business growth.</p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <button class="flex items-center justify-center gap-2 bg-white text-black px-8 py-3 rounded-full font-medium hover:bg-gray-200 transition-colors">
+                            Book a Free Consultation
+                        </button>
+                        <button class="px-8 py-3 rounded-full border border-white/20 hover:bg-white/10 transition-colors text-white font-medium bg-black/50 backdrop-blur-md">
+                            Send us an Email
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/10 bg-black pt-20 pb-10">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="md:col-span-2">
+                    <a href="#" class="text-2xl font-bold tracking-tighter mb-6 inline-block">Nexus<span class="text-accent">.ai</span></a>
+                    <p class="text-gray-400 max-w-sm">We design and build premium AI-powered digital products that help modern companies scale, automate, and dominate their industries.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-6">Company</h4>
+                    <ul class="flex flex-col gap-4 text-sm text-gray-400">
+                        <li><a href="#work" class="hover:text-white transition-colors">Work</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-6">Social</h4>
+                    <div class="flex gap-4 text-gray-400">
+                        <a href="#" class="hover:text-white transition-colors p-2 glass rounded-full"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+                        <a href="#" class="hover:text-white transition-colors p-2 glass rounded-full"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-sm text-gray-500">
+                <p>© 2026 Nexus AI Agency. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Logic -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Initialize Lucide Icons
+    lucide.createIcons();
+
+    // 2. Navbar Scroll Effect
+    const navbar = document.getElementById("navbar");
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 20) {
+            navbar.classList.add("scrolled");
+            navbar.classList.remove("py-6");
+        } else {
+            navbar.classList.remove("scrolled");
+            navbar.classList.add("py-6");
+        }
+    });
+
+    // 3. Mobile Menu Toggle
+    const menuBtn = document.getElementById("mobile-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    
+    menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.toggle("flex");
+        // Update icon based on state
+        const isHidden = mobileMenu.classList.contains("hidden");
+        menuBtn.innerHTML = isHidden 
+            ? '<i data-lucide="menu" class="w-6 h-6"></i>' 
+            : '<i data-lucide="x" class="w-6 h-6"></i>';
+        lucide.createIcons();
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add("hidden");
+            mobileMenu.classList.remove("flex");
+            menuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+            lucide.createIcons();
+        });
+    });
+
+    // 4. Scroll Animations using Intersection Observer
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target); // Only animate once
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll(".fade-up").forEach(el => {
+        observer.observe(el);
+    });
+
+    // 5. FAQ Accordion
+    const faqButtons = document.querySelectorAll(".faq-button");
+    faqButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector(".faq-icon");
+            
+            // Toggle active state
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                icon.style.transform = "rotate(0deg)";
+            } else {
+                // Close all others first
+                document.querySelectorAll(".faq-content").forEach(c => {
+                    c.style.maxHeight = null;
+                });
+                document.querySelectorAll(".faq-icon").forEach(i => {
+                    i.style.transform = "rotate(0deg)";
+                });
+                
+                content.style.maxHeight = content.scrollHeight + "px";
+                icon.style.transform = "rotate(180deg)";
+            }
+        });
+    });
+});

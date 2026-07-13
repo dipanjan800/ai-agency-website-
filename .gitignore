@@ -1,0 +1,10 @@
+# Dependency directories
+node_modules/
+
+# Vite/Build cache and outputs
+dist/
+.vite/
+
+# OS files
+.DS_Store
+Thumbs.db
