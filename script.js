@@ -1,6 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
+    function initIcons() {
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    }
+
     // 1. Initialize Lucide Icons
-    lucide.createIcons();
+    initIcons();
 
     // 2. Navbar Scroll Effect
     const navbar = document.getElementById("navbar");
@@ -26,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
         menuBtn.innerHTML = isHidden 
             ? '<i data-lucide="menu" class="w-6 h-6"></i>' 
             : '<i data-lucide="x" class="w-6 h-6"></i>';
-        lucide.createIcons();
+        initIcons();
     });
 
     // Close mobile menu on link click
@@ -35,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
             mobileMenu.classList.add("hidden");
             mobileMenu.classList.remove("flex");
             menuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
-            lucide.createIcons();
+            initIcons();
         });
     });
 
