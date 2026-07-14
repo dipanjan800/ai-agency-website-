@@ -90,4 +90,43 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+
+    // 6. Word Cycler Animation
+    const animatedWord = document.getElementById('animated-word');
+    if (animatedWord) {
+        const words = ['business', 'institute', 'clinic', 'store', 'shop'];
+        let wordIndex = 0;
+        let isDeleting = false;
+        let text = 'business';
+        let typingSpeed = 100;
+
+        function type() {
+            const currentWord = words[wordIndex];
+            
+            if (isDeleting) {
+                text = currentWord.substring(0, text.length - 1);
+                typingSpeed = 50;
+            } else {
+                text = currentWord.substring(0, text.length + 1);
+                typingSpeed = 100;
+            }
+
+            animatedWord.textContent = text;
+
+            let nextTimeout = typingSpeed;
+
+            if (!isDeleting && text === currentWord) {
+                isDeleting = true;
+                nextTimeout = 2000; // Pause at end of word
+            } else if (isDeleting && text === '') {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                nextTimeout = 500; // Pause before typing new word
+            }
+
+            setTimeout(type, nextTimeout);
+        }
+
+        setTimeout(type, 2000); // Start after 2s
+    }
 });
