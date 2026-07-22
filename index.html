@@ -45,10 +45,9 @@
             <nav class="hidden md:flex items-center gap-8">
                 <a href="#services" class="text-sm text-gray-300 hover:text-white transition-colors">Services</a>
                 <a href="#work" class="text-sm text-gray-300 hover:text-white transition-colors">Work</a>
-                <a href="#pricing" class="text-sm text-gray-300 hover:text-white transition-colors">Pricing</a>
-                <button class="bg-[#2563eb] text-white border border-[#2563eb] px-6 py-2 rounded-full text-sm font-medium hover:bg-white hover:text-[#2563eb] transition-colors shadow-sm">
+                <a href="#cta" class="bg-[#2563eb] text-white border border-[#2563eb] px-6 py-2 rounded-full text-sm font-medium hover:bg-white hover:text-[#2563eb] transition-colors shadow-sm">
                     Book Call
-                </button>
+                </a>
             </nav>
             <button id="mobile-menu-btn" class="md:hidden text-white">
                 <i data-lucide="menu" class="w-6 h-6"></i>
@@ -57,10 +56,9 @@
         <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 glass flex-col p-6 gap-4 md:hidden border-t border-white/10">
             <a href="#services" class="text-lg text-gray-300 hover:text-white">Services</a>
             <a href="#work" class="text-lg text-gray-300 hover:text-white">Work</a>
-            <a href="#pricing" class="text-lg text-gray-300 hover:text-white">Pricing</a>
-            <button class="w-full bg-[#2563eb] text-white border border-[#2563eb] px-6 py-3 rounded-full font-medium hover:bg-white hover:text-[#2563eb] transition-colors mt-4">
+            <a href="#cta" class="inline-block text-center w-full bg-[#2563eb] text-white border border-[#2563eb] px-6 py-3 rounded-full font-medium hover:bg-white hover:text-[#2563eb] transition-colors mt-4">
                 Book Call
-            </button>
+            </a>
         </div>
     </header>
 
@@ -81,11 +79,11 @@
                         We design, develop, and deploy bespoke AI solutions, chatbots, and scalable software.
                     </p>
                     <div class="flex flex-col xl:flex-row gap-2 md:gap-4 w-full sm:w-auto">
-                        <button class="flex items-center justify-center gap-1 md:gap-2 bg-[#2563eb] text-white border border-[#2563eb] px-3 py-1.5 md:px-8 md:py-3 rounded-full text-[10px] md:text-base font-medium hover:bg-white hover:text-[#2563eb] transition-colors w-full sm:w-auto group">
+                        <a href="#cta" class="flex items-center justify-center gap-1 md:gap-2 bg-[#2563eb] text-white border border-[#2563eb] px-3 py-1.5 md:px-8 md:py-3 rounded-full text-[10px] md:text-base font-medium hover:bg-white hover:text-[#2563eb] transition-colors w-full sm:w-auto group">
                             <span class="hidden sm:inline">Book a Free Consultation</span>
                             <span class="sm:hidden">Book Call</span>
                             <i data-lucide="arrow-right" class="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform"></i>
-                        </button>
+                        </a>
                         <button class="px-3 py-1.5 md:px-8 md:py-3 rounded-full border border-white/20 hover:bg-white/10 transition-colors text-white text-[10px] md:text-base font-medium w-full sm:w-auto">
                             View Work
                         </button>
@@ -130,54 +128,7 @@
             </div>
         </section>
 
-        <!-- OLD SERVICES (For Comparison) -->
-        <section id="services-old" class="py-24 relative">
-            <div class="container mx-auto px-6 md:px-12">
-                <div class="flex flex-col gap-4 mb-16 items-center text-center fade-up">
-                    <span class="text-accent uppercase tracking-wider text-sm font-semibold">Our Services</span>
-                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Intelligent solutions for modern business</h2>
-                </div>
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Service Card -->
-                    <div class="fade-up group glass p-8 rounded-3xl hover:bg-white/10 transition-colors duration-300 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-colors"></div>
-                        <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-accent group-hover:scale-110 transition-transform">
-                            <i data-lucide="bot"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">AI Chatbots & Agents</h3>
-                        <p class="text-gray-400 mb-6 text-sm leading-relaxed">Custom conversational AI trained on your company data to automate customer support.</p>
-                        <div class="mt-auto pt-6 border-t border-white/10">
-                            <p class="text-xs font-medium text-gray-300 flex items-center gap-2"><i data-lucide="zap" class="w-3 h-3 text-accent"></i> Outcome: Reduce support tickets by up to 70%</p>
-                        </div>
-                    </div>
-                    <!-- Service Card -->
-                    <div class="fade-up delay-100 group glass p-8 rounded-3xl hover:bg-white/10 transition-colors duration-300 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-colors"></div>
-                        <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-accent group-hover:scale-110 transition-transform">
-                            <i data-lucide="code"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">AI Website Development</h3>
-                        <p class="text-gray-400 mb-6 text-sm leading-relaxed">High-performance, modern web applications seamlessly integrated with advanced AI capabilities.</p>
-                        <div class="mt-auto pt-6 border-t border-white/10">
-                            <p class="text-xs font-medium text-gray-300 flex items-center gap-2"><i data-lucide="zap" class="w-3 h-3 text-accent"></i> Outcome: Increase conversions</p>
-                        </div>
-                    </div>
-                    <!-- Service Card -->
-                    <div class="fade-up delay-200 group glass p-8 rounded-3xl hover:bg-white/10 transition-colors duration-300 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-colors"></div>
-                        <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-accent group-hover:scale-110 transition-transform">
-                            <i data-lucide="database"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Custom Business Software</h3>
-                        <p class="text-gray-400 mb-6 text-sm leading-relaxed">Tailor-made internal tools, CRM integrations, and admin dashboards built for scale.</p>
-                        <div class="mt-auto pt-6 border-t border-white/10">
-                            <p class="text-xs font-medium text-gray-300 flex items-center gap-2"><i data-lucide="zap" class="w-3 h-3 text-accent"></i> Outcome: Streamline operations</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
 
         <!-- NEW SERVICES -->
         <section id="services" class="py-24 relative">
@@ -185,6 +136,7 @@
                 <div class="flex flex-col gap-4 mb-16 items-center text-center fade-up">
                     <span class="text-accent uppercase tracking-wider text-sm font-semibold">Our Services</span>
                     <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Innovating Tomorrow. <span class="text-violet-600">Building Today.</span></h2>
+                    <p class="text-gray-300 max-w-3xl text-lg md:text-xl font-medium mb-2">Intelligent solutions for modern business</p>
                     <p class="text-gray-400 max-w-3xl text-sm md:text-base leading-relaxed">Empowering businesses with next-gen technology solutions from custom software to AI-driven platforms, we engineer your digital success.</p>
                 </div>
                 
@@ -193,15 +145,18 @@
                     <div class="fade-up group p-8 rounded-[2rem] bg-[#111111] hover:bg-violet-600 border border-white/5 hover:border-violet-500 hover:shadow-[0_0_30px_rgba(124,58,237,0.3)] transition-all duration-300 relative flex flex-col h-full min-h-[280px]">
                         <div class="flex justify-between items-start mb-auto">
                             <div class="p-3 bg-violet-600/10 rounded-xl text-violet-600 border border-violet-600/20 group-hover:bg-white/20 group-hover:text-white group-hover:border-white/30 transition-colors">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/><polyline points="10 10 8 12 10 14"/><polyline points="14 10 16 12 14 14"/></svg>
+                                <i data-lucide="code-2" class="w-6 h-6"></i>
                             </div>
                             <div class="w-8 h-8 rounded-full border border-violet-600/30 text-violet-600 flex items-center justify-center group-hover:bg-white group-hover:text-violet-600 transition-colors">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
                             </div>
                         </div>
                         <div class="mt-12">
                             <h3 class="text-xl font-bold mb-3 text-white">Custom Software<br>Development</h3>
                             <p class="text-gray-400 group-hover:text-white/90 text-sm leading-relaxed transition-colors">Scalable, secure, and high-performance apps tailored to your needs.</p>
+                        </div>
+                        <div class="mt-auto pt-6 border-t border-white/10 group-hover:border-white/20 transition-colors">
+                            <p class="text-xs font-medium text-violet-400 group-hover:text-white flex items-center gap-2 transition-colors"><i data-lucide="zap" class="w-3 h-3"></i> Outcome: 10x Operational Efficiency</p>
                         </div>
                     </div>
 
@@ -209,15 +164,18 @@
                     <div class="fade-up delay-100 group p-8 rounded-[2rem] bg-violet-600 hover:bg-violet-500 border border-violet-500 transition-all duration-300 relative flex flex-col h-full min-h-[280px] shadow-[0_0_30px_rgba(124,58,237,0.3)] hover:shadow-[0_0_40px_rgba(124,58,237,0.5)]">
                         <div class="flex justify-between items-start mb-auto">
                             <div class="p-3 bg-white/20 rounded-xl text-white border border-white/30">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/><polyline points="10 10 8 12 10 14"/><polyline points="14 10 16 12 14 14"/></svg>
+                                <i data-lucide="bot" class="w-6 h-6"></i>
                             </div>
                             <div class="w-8 h-8 rounded-full border border-white/50 text-white flex items-center justify-center bg-white/10 group-hover:bg-white group-hover:text-violet-600 transition-colors">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
                             </div>
                         </div>
                         <div class="mt-12">
-                            <h3 class="text-xl font-bold mb-3 text-white">AI & Machine Learning</h3>
-                            <p class="text-white/90 text-sm leading-relaxed">Automate decisions, forecast trends, and power your product with data.</p>
+                            <h3 class="text-xl font-bold mb-3 text-white">AI Chatbots & Agents</h3>
+                            <p class="text-white/90 text-sm leading-relaxed">Custom conversational AI trained on your company data to automate customer support.</p>
+                        </div>
+                        <div class="mt-auto pt-6 border-t border-white/20">
+                            <p class="text-xs font-medium text-white flex items-center gap-2"><i data-lucide="zap" class="w-3 h-3"></i> Outcome: 70% Reduction in manual tasks</p>
                         </div>
                     </div>
 
@@ -225,15 +183,18 @@
                     <div class="fade-up delay-200 group p-8 rounded-[2rem] bg-[#111111] hover:bg-violet-600 border border-white/5 hover:border-violet-500 hover:shadow-[0_0_30px_rgba(124,58,237,0.3)] transition-all duration-300 relative flex flex-col h-full min-h-[280px]">
                         <div class="flex justify-between items-start mb-auto">
                             <div class="p-3 bg-violet-600/10 rounded-xl text-violet-600 border border-violet-600/20 group-hover:bg-white/20 group-hover:text-white group-hover:border-white/30 transition-colors">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/><polyline points="10 10 8 12 10 14"/><polyline points="14 10 16 12 14 14"/></svg>
+                                <i data-lucide="cloud" class="w-6 h-6"></i>
                             </div>
                             <div class="w-8 h-8 rounded-full border border-violet-600/30 text-violet-600 flex items-center justify-center group-hover:bg-white group-hover:text-violet-600 transition-colors">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
                             </div>
                         </div>
                         <div class="mt-12">
                             <h3 class="text-xl font-bold mb-3 text-white">Cloud Solutions</h3>
                             <p class="text-gray-400 group-hover:text-white/90 text-sm leading-relaxed transition-colors">Future-proof your infrastructure with AWS, Azure, or GCP deployments.</p>
+                        </div>
+                        <div class="mt-auto pt-6 border-t border-white/10 group-hover:border-white/20 transition-colors">
+                            <p class="text-xs font-medium text-violet-400 group-hover:text-white flex items-center gap-2 transition-colors"><i data-lucide="zap" class="w-3 h-3"></i> Outcome: 99.99% Guaranteed Uptime</p>
                         </div>
                     </div>
 
@@ -241,15 +202,18 @@
                     <div class="fade-up group p-8 rounded-[2rem] bg-[#111111] hover:bg-violet-600 border border-white/5 hover:border-violet-500 hover:shadow-[0_0_30px_rgba(124,58,237,0.3)] transition-all duration-300 relative flex flex-col h-full min-h-[280px]">
                         <div class="flex justify-between items-start mb-auto">
                             <div class="p-3 bg-violet-600/10 rounded-xl text-violet-600 border border-violet-600/20 group-hover:bg-white/20 group-hover:text-white group-hover:border-white/30 transition-colors">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/><polyline points="10 10 8 12 10 14"/><polyline points="14 10 16 12 14 14"/></svg>
+                                <i data-lucide="pen-tool" class="w-6 h-6"></i>
                             </div>
                             <div class="w-8 h-8 rounded-full border border-violet-600/30 text-violet-600 flex items-center justify-center group-hover:bg-white group-hover:text-violet-600 transition-colors">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
                             </div>
                         </div>
                         <div class="mt-12">
                             <h3 class="text-xl font-bold mb-3 text-white">UI/UX<br>Design</h3>
                             <p class="text-gray-400 group-hover:text-white/90 text-sm leading-relaxed transition-colors">Seamless, human-centered digital experiences that drive engagement.</p>
+                        </div>
+                        <div class="mt-auto pt-6 border-t border-white/10 group-hover:border-white/20 transition-colors">
+                            <p class="text-xs font-medium text-violet-400 group-hover:text-white flex items-center gap-2 transition-colors"><i data-lucide="zap" class="w-3 h-3"></i> Outcome: 3x Higher Conversion Rates</p>
                         </div>
                     </div>
 
@@ -257,15 +221,18 @@
                     <div class="fade-up delay-100 group p-8 rounded-[2rem] bg-[#111111] hover:bg-violet-600 border border-white/5 hover:border-violet-500 hover:shadow-[0_0_30px_rgba(124,58,237,0.3)] transition-all duration-300 relative flex flex-col h-full min-h-[280px]">
                         <div class="flex justify-between items-start mb-auto">
                             <div class="p-3 bg-violet-600/10 rounded-xl text-violet-600 border border-violet-600/20 group-hover:bg-white/20 group-hover:text-white group-hover:border-white/30 transition-colors">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/><polyline points="10 10 8 12 10 14"/><polyline points="14 10 16 12 14 14"/></svg>
+                                <i data-lucide="smartphone" class="w-6 h-6"></i>
                             </div>
                             <div class="w-8 h-8 rounded-full border border-violet-600/30 text-violet-600 flex items-center justify-center group-hover:bg-white group-hover:text-violet-600 transition-colors">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
                             </div>
                         </div>
                         <div class="mt-12">
                             <h3 class="text-xl font-bold mb-3 text-white">Web & Mobile App<br>Development</h3>
                             <p class="text-gray-400 group-hover:text-white/90 text-sm leading-relaxed transition-colors">From MVPs to enterprise apps &mdash; we code what you imagine.</p>
+                        </div>
+                        <div class="mt-auto pt-6 border-t border-white/10 group-hover:border-white/20 transition-colors">
+                            <p class="text-xs font-medium text-violet-400 group-hover:text-white flex items-center gap-2 transition-colors"><i data-lucide="zap" class="w-3 h-3"></i> Outcome: 40% Faster Go-to-Market</p>
                         </div>
                     </div>
 
@@ -273,15 +240,18 @@
                     <div class="fade-up delay-200 group p-8 rounded-[2rem] bg-[#111111] hover:bg-violet-600 border border-white/5 hover:border-violet-500 hover:shadow-[0_0_30px_rgba(124,58,237,0.3)] transition-all duration-300 relative flex flex-col h-full min-h-[280px]">
                         <div class="flex justify-between items-start mb-auto">
                             <div class="p-3 bg-violet-600/10 rounded-xl text-violet-600 border border-violet-600/20 group-hover:bg-white/20 group-hover:text-white group-hover:border-white/30 transition-colors">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/><polyline points="10 10 8 12 10 14"/><polyline points="14 10 16 12 14 14"/></svg>
+                                <i data-lucide="paintbrush" class="w-6 h-6"></i>
                             </div>
                             <div class="w-8 h-8 rounded-full border border-violet-600/30 text-violet-600 flex items-center justify-center group-hover:bg-white group-hover:text-violet-600 transition-colors">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
                             </div>
                         </div>
                         <div class="mt-12">
-                            <h3 class="text-xl font-bold mb-3 text-white">Cybersecurity</h3>
-                            <p class="text-gray-400 group-hover:text-white/90 text-sm leading-relaxed transition-colors">Protect what matters with advanced security frameworks and audits.</p>
+                            <h3 class="text-xl font-bold mb-3 text-white">Redesign Your<br>Existing Product</h3>
+                            <p class="text-gray-400 group-hover:text-white/90 text-sm leading-relaxed transition-colors">Transform outdated interfaces into modern, intuitive, and high-converting experiences.</p>
+                        </div>
+                        <div class="mt-auto pt-6 border-t border-white/10 group-hover:border-white/20 transition-colors">
+                            <p class="text-xs font-medium text-violet-400 group-hover:text-white flex items-center gap-2 transition-colors"><i data-lucide="zap" class="w-3 h-3"></i> Outcome: 2x User Engagement</p>
                         </div>
                     </div>
                 </div>
@@ -569,238 +539,6 @@
             </div>
         </section>
 
-        <!-- PRICING -->
-        <section class="pt-0 pb-8 md:py-32 relative overflow-hidden bg-black flex flex-col items-center justify-center md:min-h-screen">
-            
-            <!-- Glowing Orbs -->
-            <div class="absolute top-[10%] right-[10%] w-[500px] h-[500px] bg-cyan-500/20 blur-[150px] rounded-full pointer-events-none z-0"></div>
-            <div class="absolute bottom-[-10%] left-[0%] w-[600px] h-[600px] bg-blue-600/30 blur-[180px] rounded-full pointer-events-none z-0"></div>
-
-            <div class="container mx-auto px-6 md:px-12 relative z-10 w-full max-w-7xl">
-                <!-- Pricing Header Text -->
-                <div class="w-full flex justify-center mb-4 md:mb-20 relative z-20">
-                    <h2 class="text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold text-[#1E3A8A]/60 tracking-tighter whitespace-nowrap drop-shadow-[0_0_80px_rgba(30,58,138,0.4)]">
-                        Pricing
-                    </h2>
-                </div>
-                
-
-
-                <!-- Pricing Grid -->
-                <div class="grid md:grid-cols-3 gap-6 lg:gap-8 items-stretch relative z-10">
-                    
-                    <!-- Free Card -->
-                    <div class="group bg-black/40 backdrop-blur-[40px] rounded-[2rem] border border-white/10 p-8 md:p-10 flex flex-col relative overflow-hidden transition-all duration-500 hover:bg-black/60 hover:-translate-y-2 hover:border-cyan-400/50 hover:shadow-[0_20px_60px_rgba(34,211,238,0.15)] shadow-2xl">
-                        <div class="mb-8">
-                            <h3 class="text-white text-2xl font-medium mb-1">Free</h3>
-                            <div class="text-white text-5xl font-semibold tracking-tight mb-4">Free</div>
-                            <p class="text-gray-400 text-xs md:text-sm leading-relaxed max-w-[250px]">For creators taking their first steps with Forma.</p>
-                        </div>
-                        
-                        <ul class="flex flex-col gap-5 flex-1 mb-12">
-                            <li class="flex items-start gap-4">
-                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
-                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                                </div>
-                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">Up to 3 projects in the cloud</span>
-                            </li>
-                            <li class="flex items-start gap-4">
-                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
-                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                                </div>
-                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">Image export up to 1080p</span>
-                            </li>
-                            <li class="flex items-start gap-4">
-                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
-                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                                </div>
-                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">Basic editing tools</span>
-                            </li>
-                            <li class="flex items-start gap-4">
-                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
-                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                                </div>
-                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">Free templates and icons</span>
-                            </li>
-                            <li class="flex items-start gap-4">
-                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
-                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                                </div>
-                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">Access via web and mobile app</span>
-                            </li>
-                        </ul>
-                        
-                        <button class="w-full py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors text-sm shadow-[0_0_20px_rgba(255,255,255,0.2)] mt-auto">
-                            Choose Plan
-                        </button>
-                    </div>
-
-                    <!-- Standard Card -->
-                    <div class="group bg-black/40 backdrop-blur-[40px] rounded-[2rem] border border-white/10 p-8 md:p-10 flex flex-col relative overflow-hidden transition-all duration-500 hover:bg-black/60 hover:-translate-y-2 hover:border-cyan-400/50 hover:shadow-[0_20px_60px_rgba(34,211,238,0.15)] shadow-2xl">
-                        <div class="mb-8">
-                            <h3 class="text-white text-2xl font-medium mb-1">Standard</h3>
-                            <div class="flex items-baseline gap-1 mb-4">
-                                <span class="text-white text-5xl font-semibold tracking-tight transition-all duration-300" id="standard-price" data-monthly="$9,99" data-yearly="$99,99">$9,99</span>
-                                <span class="text-gray-400 text-2xl transition-all duration-300" id="standard-period">/m</span>
-                            </div>
-                            <p class="text-gray-400 text-xs md:text-sm leading-relaxed max-w-[250px]">For freelancers and small teams who need more freedom and flexibility.</p>
-                        </div>
-                        
-                        <ul class="flex flex-col gap-5 flex-1 mb-12">
-                            <li class="flex items-start gap-4">
-                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
-                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                                </div>
-                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">Up to 50 projects in the cloud</span>
-                            </li>
-                            <li class="flex items-start gap-4">
-                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
-                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                                </div>
-                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">Export up to 4K</span>
-                            </li>
-                            <li class="flex items-start gap-4">
-                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
-                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                                </div>
-                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">Advanced editing toolkit</span>
-                            </li>
-                            <li class="flex items-start gap-4">
-                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
-                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                                </div>
-                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">Team collaboration (up to 5 members)</span>
-                            </li>
-                            <li class="flex items-start gap-4">
-                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
-                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                                </div>
-                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">Access to premium template library</span>
-                            </li>
-                        </ul>
-                        
-                        <button class="w-full py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors text-sm shadow-[0_0_20px_rgba(255,255,255,0.2)] mt-auto">
-                            Choose Plan
-                        </button>
-                    </div>
-
-                    <!-- Pro Card -->
-                    <div class="group bg-black/40 backdrop-blur-[40px] rounded-[2rem] border-[1.5px] border-cyan-400/80 p-8 md:p-10 flex flex-col relative overflow-hidden transition-all duration-500 shadow-[0_0_50px_rgba(34,211,238,0.2),inset_0_0_30px_rgba(34,211,238,0.15)] hover:-translate-y-2 hover:shadow-[0_20px_80px_rgba(34,211,238,0.4),inset_0_0_40px_rgba(34,211,238,0.2)] hover:border-cyan-300">
-                        <div class="absolute top-[-50px] right-[-50px] w-[200px] h-[200px] bg-cyan-400/20 blur-[60px] rounded-full pointer-events-none z-0"></div>
-                        <div class="absolute bottom-[-50px] left-[-50px] w-[150px] h-[150px] bg-blue-500/20 blur-[60px] rounded-full pointer-events-none z-0"></div>
-                        
-                        <div class="mb-8 relative z-10">
-                            <h3 class="text-white text-2xl font-medium mb-1">Pro</h3>
-                            <div class="flex items-baseline gap-1 mb-4">
-                                <span class="text-white text-5xl font-semibold tracking-tight transition-all duration-300" id="pro-price" data-monthly="$19,99" data-yearly="$199,99">$19,99</span>
-                                <span class="text-gray-400 text-2xl transition-all duration-300" id="pro-period">/m</span>
-                            </div>
-                            <p class="text-gray-400 text-xs md:text-sm leading-relaxed max-w-[250px]">For studios, agencies, and professional creators working with brands.</p>
-                        </div>
-                        
-                        <ul class="flex flex-col gap-5 flex-1 mb-12 relative z-10">
-                            <li class="flex items-start gap-4">
-                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
-                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                                </div>
-                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">Unlimited projects</span>
-                            </li>
-                            <li class="flex items-start gap-4">
-                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
-                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                                </div>
-                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">Export up to 8K + animations</span>
-                            </li>
-                            <li class="flex items-start gap-4">
-                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
-                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                                </div>
-                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">AI-powered content generation tools</span>
-                            </li>
-                            <li class="flex items-start gap-4">
-                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
-                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                                </div>
-                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">Unlimited team members</span>
-                            </li>
-                            <li class="flex items-start gap-4">
-                                <div class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
-                                    <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
-                                </div>
-                                <span class="text-gray-300 text-[13px] md:text-sm leading-tight pt-0.5">Brand customization (logos, fonts, color palettes)</span>
-                            </li>
-                        </ul>
-                        
-                        <button class="w-full py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors text-sm shadow-[0_0_20px_rgba(255,255,255,0.3)] mt-auto relative z-10">
-                            Choose Plan
-                        </button>
-                    </div>
-
-                </div>
-
-                <!-- Yearly Toggle -->
-                <div class="mt-12 flex items-center justify-start gap-4 relative z-10">
-                    <span id="monthly-label" class="text-white font-medium text-lg cursor-pointer transition-colors duration-300" onclick="if(isYearly) togglePricing()">Monthly</span>
-                    <button id="pricing-toggle" onclick="togglePricing()" class="w-14 h-7 bg-white rounded-full flex items-center px-1 transition-colors relative shadow-inner cursor-pointer hover:bg-gray-100">
-                        <div id="toggle-knob" class="w-5 h-5 bg-black rounded-full shadow-md transition-transform duration-300 translate-x-0"></div>
-                    </button>
-                    <span id="yearly-label" class="text-gray-500 font-medium text-lg cursor-pointer transition-colors duration-300" onclick="if(!isYearly) togglePricing()">Yearly <span class="text-xs ml-1 bg-cyan-400/20 text-cyan-400 px-2 py-0.5 rounded-full border border-cyan-400/30">Save 20%</span></span>
-                </div>
-
-                <!-- Pricing Script -->
-                <script>
-                    let isYearly = false;
-                    function togglePricing() {
-                        isYearly = !isYearly;
-                        const knob = document.getElementById('toggle-knob');
-                        const mLabel = document.getElementById('monthly-label');
-                        const yLabel = document.getElementById('yearly-label');
-                        const sPrice = document.getElementById('standard-price');
-                        const pPrice = document.getElementById('pro-price');
-                        const sPeriod = document.getElementById('standard-period');
-                        const pPeriod = document.getElementById('pro-period');
-
-                        if(isYearly) {
-                            knob.style.transform = 'translateX(28px)';
-                            mLabel.classList.replace('text-white', 'text-gray-500');
-                            yLabel.classList.replace('text-gray-500', 'text-white');
-                            
-                            // Animate price change
-                            sPrice.style.opacity = '0';
-                            pPrice.style.opacity = '0';
-                            
-                            setTimeout(() => {
-                                sPrice.innerText = sPrice.getAttribute('data-yearly');
-                                pPrice.innerText = pPrice.getAttribute('data-yearly');
-                                sPeriod.innerText = '/y';
-                                pPeriod.innerText = '/y';
-                                sPrice.style.opacity = '1';
-                                pPrice.style.opacity = '1';
-                            }, 150);
-                            
-                        } else {
-                            knob.style.transform = 'translateX(0)';
-                            mLabel.classList.replace('text-gray-500', 'text-white');
-                            yLabel.classList.replace('text-white', 'text-gray-500');
-                            
-                            // Animate price change
-                            sPrice.style.opacity = '0';
-                            pPrice.style.opacity = '0';
-                            
-                            setTimeout(() => {
-                                sPrice.innerText = sPrice.getAttribute('data-monthly');
-                                pPrice.innerText = pPrice.getAttribute('data-monthly');
-                                sPeriod.innerText = '/m';
-                                pPeriod.innerText = '/m';
-                                sPrice.style.opacity = '1';
-                                pPrice.style.opacity = '1';
-                            }, 150);
-                        }
-                    }
-                </script>
-
-            </div>
-        </section>
 
         <!-- WHY US -->
         <section class="pt-8 pb-16 md:py-24 relative overflow-hidden">
@@ -855,44 +593,6 @@
             </div>
         </section>
 
-        <!-- PRICING -->
-        <section id="pricing" class="py-24 relative">
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] -z-10"></div>
-            <div class="container mx-auto px-6 md:px-12">
-                <div class="fade-up flex flex-col gap-4 mb-16 items-center text-center">
-                    <span class="text-accent uppercase tracking-wider text-sm font-semibold">Investment</span>
-                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Transparent pricing for premium work</h2>
-                </div>
-                
-                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    <!-- Starter -->
-                    <div class="fade-up p-8 rounded-3xl glass flex flex-col">
-                        <h3 class="text-xl font-bold mb-2">Starter Pilot</h3>
-                        <p class="text-gray-400 text-sm mb-6 h-10">Perfect for validating an AI concept or landing page.</p>
-                        <div class="text-4xl font-bold mb-8">$5,000</div>
-                        <ul class="flex flex-col gap-4 mb-8 flex-grow">
-                            <li class="flex items-start gap-3 text-sm text-gray-300"><i data-lucide="check" class="text-accent shrink-0 mt-0.5 w-4 h-4"></i>Custom AI Chatbot</li>
-                            <li class="flex items-start gap-3 text-sm text-gray-300"><i data-lucide="check" class="text-accent shrink-0 mt-0.5 w-4 h-4"></i>Next.js & Tailwind Stack</li>
-                            <li class="flex items-start gap-3 text-sm text-gray-300"><i data-lucide="check" class="text-accent shrink-0 mt-0.5 w-4 h-4"></i>2 Weeks Delivery</li>
-                        </ul>
-                        <button class="w-full px-8 py-3 rounded-full border border-white/20 hover:bg-white/10 transition-colors text-white font-medium mt-auto">Get Started</button>
-                    </div>
-                    <!-- Pro -->
-                    <div class="fade-up delay-100 p-8 rounded-3xl bg-white/10 border-2 border-accent shadow-[0_0_50px_rgba(59,130,246,0.15)] flex flex-col relative">
-                        <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-4 py-1 bg-accent text-white text-xs font-bold uppercase tracking-wider rounded-full">Most Popular</div>
-                        <h3 class="text-xl font-bold mb-2">Growth Engine</h3>
-                        <p class="text-gray-400 text-sm mb-6 h-10">Comprehensive AI applications and workflows.</p>
-                        <div class="text-4xl font-bold mb-8">$15,000+</div>
-                        <ul class="flex flex-col gap-4 mb-8 flex-grow">
-                            <li class="flex items-start gap-3 text-sm text-gray-300"><i data-lucide="check" class="text-accent shrink-0 mt-0.5 w-4 h-4"></i>Custom SaaS Application</li>
-                            <li class="flex items-start gap-3 text-sm text-gray-300"><i data-lucide="check" class="text-accent shrink-0 mt-0.5 w-4 h-4"></i>Advanced RAG Pipeline</li>
-                            <li class="flex items-start gap-3 text-sm text-gray-300"><i data-lucide="check" class="text-accent shrink-0 mt-0.5 w-4 h-4"></i>Priority SLA Support</li>
-                        </ul>
-                        <button class="w-full bg-accent text-white px-8 py-3 rounded-full hover:bg-blue-600 transition-colors font-medium mt-auto">Get Started</button>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- FAQ -->
         <section class="py-24">
@@ -930,7 +630,7 @@
         </section>
 
         <!-- CTA -->
-        <section class="py-24 md:py-32 relative overflow-hidden fade-up">
+        <section id="cta" class="py-24 md:py-32 relative overflow-hidden fade-up">
             <div class="absolute inset-0 bg-accent/5"></div>
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-[400px] bg-accent/20 blur-[120px] rounded-full -z-10"></div>
             
@@ -939,14 +639,96 @@
                     <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:2rem_2rem] -z-10"></div>
                     <h2 class="text-4xl md:text-6xl font-bold tracking-tight mb-6">Ready to build the future?</h2>
                     <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">Stop falling behind. Let's discuss how custom AI solutions can accelerate your business growth.</p>
-                    <div class="flex flex-col sm:flex-row justify-center gap-4">
-                        <button class="flex items-center justify-center gap-2 bg-[#2563eb] text-white border border-[#2563eb] px-8 py-3 rounded-full font-medium hover:bg-white hover:text-[#2563eb] transition-colors">
-                            Book a Free Consultation
-                        </button>
-                        <button class="px-8 py-3 rounded-full border border-white/20 hover:bg-white/10 transition-colors text-white font-medium bg-black/50 backdrop-blur-md">
-                            Send us an Email
-                        </button>
-                    </div>
+                    <form class="mt-12 max-w-4xl mx-auto w-full glass border border-white/10 rounded-3xl p-8 md:p-12 text-left bg-black/40 backdrop-blur-xl shadow-2xl">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            
+                            <!-- Full Name -->
+                            <div class="flex flex-col gap-2 md:col-span-2">
+                                <label for="full-name" class="text-sm font-medium text-gray-300 ml-1">Full Name <span class="text-red-400">*</span></label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400">
+                                        <i data-lucide="user" class="w-4 h-4"></i>
+                                    </div>
+                                    <input type="text" id="full-name" name="full-name" required class="w-full bg-black/60 border border-white/20 text-white rounded-xl pl-11 pr-4 h-[52px] text-sm focus:outline-none focus:border-[#2563eb] focus:bg-black/80 transition-colors placeholder:text-gray-500" placeholder="John Doe">
+                                </div>
+                            </div>
+
+                            <!-- Email Address -->
+                            <div class="flex flex-col gap-2">
+                                <label for="email" class="text-sm font-medium text-gray-300 ml-1">Email Address <span class="text-red-400">*</span></label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400">
+                                        <i data-lucide="mail" class="w-4 h-4"></i>
+                                    </div>
+                                    <input type="email" id="email" name="email" required class="w-full bg-black/60 border border-white/20 text-white rounded-xl pl-11 pr-4 h-[52px] text-sm focus:outline-none focus:border-[#2563eb] focus:bg-black/80 transition-colors placeholder:text-gray-500" placeholder="john@example.com">
+                                </div>
+                            </div>
+
+                            <!-- Mobile Number (Optional) -->
+                            <div class="flex flex-col gap-2">
+                                <label for="mobile" class="text-sm font-medium text-gray-300 ml-1">Mobile Number</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400">
+                                        <i data-lucide="phone" class="w-4 h-4"></i>
+                                    </div>
+                                    <input type="tel" id="mobile" name="mobile" class="w-full bg-black/60 border border-white/20 text-white rounded-xl pl-11 pr-4 h-[52px] text-sm focus:outline-none focus:border-[#2563eb] focus:bg-black/80 transition-colors placeholder:text-gray-500" placeholder="+1 (555) 000-0000">
+                                </div>
+                            </div>
+
+                            <!-- Industry Dropdown -->
+                            <div class="flex flex-col gap-2">
+                                <label for="industry-select" class="text-sm font-medium text-gray-300 ml-1">Industry</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400">
+                                        <i data-lucide="briefcase" class="w-4 h-4"></i>
+                                    </div>
+                                    <select id="industry-select" class="w-full bg-black/60 border border-white/20 text-white rounded-xl pl-11 pr-10 h-[52px] text-sm focus:outline-none focus:border-[#2563eb] focus:bg-black/80 cursor-pointer appearance-none transition-colors">
+                                        <option value="" disabled selected class="bg-gray-900 text-gray-500">Select Your Industry</option>
+                                        <option value="business" class="bg-gray-900 text-white">Business</option>
+                                        <option value="brand" class="bg-gray-900 text-white">Brand</option>
+                                        <option value="institute" class="bg-gray-900 text-white">Institute</option>
+                                        <option value="shop" class="bg-gray-900 text-white">Shop</option>
+                                        <option value="clinic" class="bg-gray-900 text-white">Clinic</option>
+                                        <option value="club" class="bg-gray-900 text-white">Club</option>
+                                        <option value="portfolio" class="bg-gray-900 text-white">Personal Portfolio</option>
+                                    </select>
+                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
+                                        <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Sub-Category Dropdown -->
+                            <div class="flex flex-col gap-2">
+                                <label for="subcategory-select" class="text-sm font-medium text-gray-300 ml-1">Sub-Category</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400">
+                                        <i data-lucide="layers" class="w-4 h-4"></i>
+                                    </div>
+                                    <select id="subcategory-select" class="w-full bg-black/60 border border-white/20 text-white rounded-xl pl-11 pr-10 h-[52px] text-sm focus:outline-none focus:border-[#2563eb] focus:bg-black/80 cursor-pointer appearance-none transition-colors opacity-60 cursor-not-allowed" disabled>
+                                        <option value="" disabled selected class="bg-gray-900 text-gray-500">Select Sub-Category</option>
+                                    </select>
+                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
+                                        <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Message Box -->
+                            <div class="flex flex-col gap-2 md:col-span-2">
+                                <label for="message-box" class="text-sm font-medium text-gray-300 ml-1">Message</label>
+                                <textarea id="message-box" rows="4" class="w-full bg-black/60 border border-white/20 text-white rounded-xl p-4 text-sm focus:outline-none focus:border-[#2563eb] focus:bg-black/80 resize-none transition-colors placeholder:text-gray-500" placeholder="Tell us more about your project goals and timeline..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="mt-8 flex justify-center md:justify-end">
+                            <button type="submit" class="w-full md:w-auto flex items-center justify-center gap-2 bg-[#2563eb] text-white border border-[#2563eb] px-10 h-[52px] rounded-full font-semibold hover:bg-white hover:text-[#2563eb] transition-all whitespace-nowrap shadow-[0_0_20px_rgba(37,99,235,0.4)] group">
+                                <span>Submit Request</span>
+                                <i data-lucide="send" class="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
@@ -965,7 +747,6 @@
                     <ul class="flex flex-col gap-4 text-sm text-gray-400">
                         <li><a href="#work" class="hover:text-white transition-colors">Work</a></li>
                         <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
-                        <li><a href="#pricing" class="hover:text-white transition-colors">Pricing</a></li>
                     </ul>
                 </div>
                 <div>
@@ -981,6 +762,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="fixed bottom-8 right-8 bg-[#2563eb] text-white p-3.5 rounded-full shadow-lg shadow-blue-600/30 opacity-0 translate-y-10 pointer-events-none transition-all duration-300 z-50 hover:bg-white hover:text-[#2563eb]">
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
 
     <!-- JS Logic -->
     <script type="module" src="/script.js"></script>

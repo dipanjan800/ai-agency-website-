@@ -129,4 +129,108 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setTimeout(type, 2000); // Start after 2s
     }
+
+    // 7. Industry & Sub-Category Dynamic Dropdowns
+    const industrySelect = document.getElementById("industry-select");
+    const subcategorySelect = document.getElementById("subcategory-select");
+
+    const subcategoryData = {
+        business: [
+            "General Business",
+            "E-Commerce & Retail",
+            "Real Estate & Construction",
+            "Finance & Banking",
+            "IT Services & Agency",
+            "Manufacturing & Logistics"
+        ],
+        brand: [
+            "Fashion & Apparel",
+            "Beauty & Cosmetics",
+            "Food & Beverage",
+            "Luxury & Lifestyle",
+            "Media & Entertainment"
+        ],
+        institute: [
+            "School (K-12)",
+            "College & University",
+            "Coaching & EdTech",
+            "Research Center",
+            "Training Academy"
+        ],
+        shop: [
+            "Retail Store",
+            "Grocery Shop",
+            "Electronics & Gadgets",
+            "Fashion Boutique",
+            "Specialty & Craft Shop"
+        ],
+        clinic: [
+            "Allopathic / General Clinic",
+            "Homeopathic Clinic",
+            "Dental Clinic",
+            "Dermatology & Skincare",
+            "Eye Care / Ophthalmology",
+            "Ayurvedic & Wellness Center"
+        ],
+        club: [
+            "Sports & Fitness Club",
+            "Gym & Health Club",
+            "Nightclub & Lounge",
+            "Social & Country Club"
+        ],
+        portfolio: [
+            "Software Developer / Engineer",
+            "UI/UX & Graphic Designer",
+            "Content Creator / Influencer",
+            "Executive / Founder",
+            "Consultant & Coach"
+        ]
+    };
+
+    if (industrySelect && subcategorySelect) {
+        industrySelect.addEventListener("change", (e) => {
+            const selectedIndustry = e.target.value;
+            const subcategories = subcategoryData[selectedIndustry] || [];
+
+            // Clear previous subcategory options
+            subcategorySelect.innerHTML = '<option value="" disabled selected class="bg-gray-900 text-gray-400">Select Sub-Category</option>';
+
+            if (subcategories.length > 0) {
+                subcategories.forEach(sub => {
+                    const opt = document.createElement("option");
+                    opt.value = sub.toLowerCase().replace(/[^a-z0-9]/g, "-");
+                    opt.textContent = sub;
+                    opt.className = "bg-gray-900 text-white";
+                    subcategorySelect.appendChild(opt);
+                });
+                subcategorySelect.disabled = false;
+                subcategorySelect.classList.remove("opacity-60", "cursor-not-allowed");
+            } else {
+                subcategorySelect.disabled = true;
+                subcategorySelect.classList.add("opacity-60", "cursor-not-allowed");
+            }
+        });
+    }
+
+    // 8. Scroll to Top Button
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    
+    if (scrollToTopBtn) {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.remove("opacity-0", "translate-y-10", "pointer-events-none");
+                scrollToTopBtn.classList.add("opacity-100", "translate-y-0", "pointer-events-auto");
+            } else {
+                scrollToTopBtn.classList.add("opacity-0", "translate-y-10", "pointer-events-none");
+                scrollToTopBtn.classList.remove("opacity-100", "translate-y-0", "pointer-events-auto");
+            }
+        });
+
+        scrollToTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    }
 });
